@@ -12,13 +12,14 @@ type Props = RectButtonProps & {
     icon: React.FC<SvgProps>,
     hasCheckBox?: boolean;
     checked?: boolean
+    rippleColor?: string
 }
 
-export function Category({title, icon: Icon, checked = true, hasCheckBox = false ,...rest}: Props){
+export function Category({title, icon: Icon, checked = true, hasCheckBox = false, rippleColor = null, ...rest}: Props){
     let { secondary40 ,secondary50, secondary70, secondary75 } = theme.colors
 
     return(
-        <RectButton {...rest}>
+        <RectButton {...rest} rippleColor={rippleColor}>
             <LinearGradient style={styles.container} colors={[secondary50, secondary70]}>
                 <LinearGradient
                     style={[styles.content, {opacity: checked ? 1 : 0.5}]}

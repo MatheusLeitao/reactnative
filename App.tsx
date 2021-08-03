@@ -6,6 +6,7 @@ import { Rajdhani_500Medium, Rajdhani_700Bold } from '@expo-google-fonts/rajdhan
 import AppLoading from 'expo-app-loading'
 import { Background } from './src/components/Background';
 import { SignIn } from './src/screens/SignIn'
+import { Routes } from './src/routes';
 
 export default function App() {
 
@@ -21,7 +22,7 @@ export default function App() {
   return (
     <Background>
       <StatusBar barStyle="light-content" backgroundColor="transparent" translucent/>
-      <SignIn />
+      <Routes />
     </Background>
   );
 }

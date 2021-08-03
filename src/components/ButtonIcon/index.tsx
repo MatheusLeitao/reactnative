@@ -8,7 +8,7 @@ import { styles } from "./styles";
 
 type Props = RectButtonProps & {
     title: string,
-    rippleColor: string
+    rippleColor?: string
 }
 
 export function ButtonIcon({ title, rippleColor = '#fff', ...rest }: Props) {

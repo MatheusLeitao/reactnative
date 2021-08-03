@@ -1,6 +1,5 @@
 {
   "expo": {
-    "packagerOpts.sourceExts": ["js", "ts", "tsx"],
     "name": "reactnative",
     "slug": "reactnative",
     "version": "1.0.0",

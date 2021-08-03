@@ -3,6 +3,7 @@ import { ScrollView } from "react-native";
 import { styles } from "./styles";
 import { categories } from '../../utils/categories'
 import { Category } from "../Category";
+import { theme } from "../../global/styles/theme";
 
 type Props = {
     categorySelected: string,
@@ -28,6 +29,7 @@ export function CategorySelect({categorySelected, setCategory, hasCheckBox = fal
                 checked={category.id === categorySelected}
                 onPress={() => setCategory(category.id)}
                 hasCheckBox={hasCheckBox}
+                rippleColor={theme.colors.secondary30}
                 />
             ))
         }

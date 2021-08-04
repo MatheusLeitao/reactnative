@@ -6,7 +6,7 @@ const fonts = theme.fonts
 
 export const styles = StyleSheet.create({
     container: {
-        width: '76%',
+        width: '75%',
         height: 1,
         backgroundColor: colors.secondary40,
         marginTop:1.8,

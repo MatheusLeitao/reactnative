@@ -4,10 +4,4 @@ const RESPONSE_TYPE = 'token';
 const CLIENT_ID = '872327810834894879';
 const CDN_IMAGE = 'https://cdn.discordapp.com'
 
-export {
-    REDIRECT_URI,
-    SCOPE,
-    RESPONSE_TYPE,
-    CLIENT_ID,
-    CDN_IMAGE
- }
+export { REDIRECT_URI, SCOPE, RESPONSE_TYPE, CLIENT_ID, CDN_IMAGE }

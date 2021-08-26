@@ -9,7 +9,10 @@ import { SignIn } from './src/screens/SignIn'
 import { Routes } from './src/routes';
 import { AuthProvider } from './src/hooks/auth';
 
-LogBox.ignoreLogs(['You are not currently signed in to Expo on your development machine.']);
+LogBox.ignoreLogs([
+  'You are not currently signed in to Expo on your development machine.',
+  'Cannot connect to the Metro server.'
+]);
 
 export default function App() {
 

@@ -63,8 +63,11 @@ export function AppointmentCreate() {
 
         console.log(newAppointment)
 
-        const storage = await AsyncStorage.getItem(COLLECTION_APPOINTMENTS);
-        const appointment = storage ? JSON.parse(storage): [];
+        const storage:any = await AsyncStorage.getItem(COLLECTION_APPOINTMENTS);
+        // const appointment = storage ? JSON.parse(storage): [];
+        var appointment:any = JSON.parse(storage)
+        appointment = appointment.filter((item:any) => item.id != 'cdc57a7d-4a85-44e2-b76a-884c37040cb4')
+
 
         await AsyncStorage.setItem(COLLECTION_APPOINTMENTS,JSON.stringify([...appointment, newAppointment]))
 

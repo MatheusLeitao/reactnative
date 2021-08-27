@@ -25,6 +25,7 @@ type AuthContextData = {
     user: User
     loading: boolean
     SignIn: () => Promise<void>
+    SignOut: () => Promise<void>
 }
 
 type AuthProviderProps = {
@@ -72,6 +73,11 @@ function AuthProvider({ children }: AuthProviderProps) {
         }
     }
 
+    async function SignOut() {
+        setUser({} as User);
+        await AsyncStorage.removeItem(COLLECTION_USERS)
+    }
+
     const loadUserStorageData = async () => {
         const storage = await AsyncStorage.getItem(COLLECTION_USERS)
 
@@ -85,7 +91,7 @@ function AuthProvider({ children }: AuthProviderProps) {
     useEffect(() => { loadUserStorageData() }, [])
 
     return (
-        <AuthContext.Provider value={{ user, SignIn, loading }}>
+        <AuthContext.Provider value={{ user, SignIn, loading, SignOut }}>
             {children}
         </AuthContext.Provider>
     )

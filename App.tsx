@@ -10,10 +10,10 @@ import { Routes } from './src/routes';
 import { AuthProvider } from './src/hooks/auth';
 import { ToastProvider } from 'react-native-toast-notifications'
 
-LogBox.ignoreLogs([
-  'You are not currently signed in to Expo on your development machine.',
-  'Cannot connect to the Metro server.'
-]);
+// LogBox.ignoreLogs([
+//   'You are not currently signed in to Expo on your development machine.',
+//   'Cannot connect to the Metro server.'
+// ]);
 
 export default function App() {
 

@@ -5,8 +5,11 @@ import { useAuth } from "../../hooks/auth";
 import { Avatar } from "../Avatar";
 import { styles } from "./styles";
 
+type Props = {
+    onPress: () => void
+}
 
-export function Profile() {
+export function Profile({ onPress }: Props) {
 
     const { user, SignOut } = useAuth()
 
@@ -25,7 +28,7 @@ export function Profile() {
 
     return (
         <View style={styles.container}>
-            <RectButton onPress={handleSignOut}>
+            <RectButton onPress={onPress} rippleColor="white" style={{}}>
                 <Avatar urlImage={user.avatar} />
             </RectButton>
             <View>

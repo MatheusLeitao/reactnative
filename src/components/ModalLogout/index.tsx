@@ -12,8 +12,13 @@ type Props = ModalProps & {
 export function ModalLogout({ children, closeModal, ...rest }: Props) {
     return (
         <Modal transparent animationType="slide" {...rest} statusBarTranslucent>
-            <TouchableWithoutFeedback onPress={closeModal}>
-                <View style={styles.overlay}>
+            <TouchableWithoutFeedback
+                onPress={closeModal}
+                onPressIn={() => {console.log("in")}}
+                onPressOut={() => {console.log('Out')}}
+                onLongPress={() => {console.log("WTF is going on!!!")}}
+                >
+                <View style={styles.overlay} {...rest}>
                     <View style={styles.container}>
                         <Background>
                             {/* <View style={styles.bar} /> */}

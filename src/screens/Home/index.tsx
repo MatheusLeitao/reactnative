@@ -16,16 +16,18 @@ import { ModalLogout } from "../../components/ModalLogout";
 import { styles } from "./styles";
 import { Loading } from "../../components/Loading";
 import { COLLECTION_APPOINTMENTS } from "../../config/database";
+import { useAuth } from "../../hooks/auth";
 
 
 export function Home() {
 
-    var total:number;
+    const { SignOut } = useAuth()
+
 
     const [category, setCategory] = useState('')
     const [appointments, setAppointments] = useState<AppointmentProps[]>()
     const [loading, setLoading] = useState(true)
-    const [openGuildsModal, setOpenGuildsModal] = useState(true)
+    const [openGuildsModal, setOpenGuildsModal] = useState(false)
 
     const navigation = useNavigation();
 
@@ -93,9 +95,9 @@ export function Home() {
             </View>
             <View style={styles.modalLogOutButtons}>
                 <View style={styles.modalLogoutButtonCancelBorder}>
-                    <RectButton  style={[styles.buttonModalLogoutCancel, styles.modalLogoutButtons, {borderColor: "#495BCC !important", borderWidth: 10}]}><Text style={styles.ModalLogoutbuttonCancelText}>Não</Text></RectButton>
+                    <RectButton  style={[styles.buttonModalLogoutCancel, styles.modalLogoutButtons]}><Text style={styles.ModalLogoutbuttonCancelText}>Não</Text></RectButton>
                 </View>
-                <RectButton style={[styles.buttonModalLogoutConfirm, styles.modalLogoutButtons]}><Text style={styles.ModalLogoutbuttonCancelText}>Sim</Text></RectButton>
+                <RectButton style={[styles.buttonModalLogoutConfirm, styles.modalLogoutButtons]} onPress={SignOut}><Text style={styles.ModalLogoutbuttonCancelText}>Sim</Text></RectButton>
             </View>
         </ModalLogout>
         </>

@@ -8,6 +8,8 @@ export const theme = {
         primary: '#E51C44',
         on: '#32BD50',
 
+        discord: '#7289DA',
+
         secondary100: '#0A1033',
         secondary90: '#0D133D',
         secondary80: '#0E1647',

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Alert, Image, Text, View } from 'react-native';
+import { Alert, Image, Text, View, ActivityIndicator } from 'react-native';
 import { styles } from './style'
 
 import IlluastratorImg from '../../assets/illustration.png'
@@ -7,10 +7,11 @@ import { ButtonIcon } from '../../components/ButtonIcon'
 import { Background } from '../../components/Background';
 
 import { useAuth } from '../../hooks/auth';
+import { theme } from '../../global/styles/theme';
 
 export function SignIn() {
 
-    const { user, SignIn } = useAuth()
+    const { loading, SignIn } = useAuth()
 
     async function handleSignIn() {
         try {
@@ -34,7 +35,12 @@ export function SignIn() {
                         Crie grupos para jogar seus games {'\n'}
                         favoritos com seus amigos
                     </Text>
-                    <ButtonIcon title="Entrar com Discord" onPress={handleSignIn} rippleColor="#d8798c" />
+                    {
+                        loading ?
+                        <ActivityIndicator color={theme.colors.primary} />
+                        :
+                        <ButtonIcon title="Entrar com Discord" onPress={handleSignIn} rippleColor="#d8798c" />
+                    }
                 </View>
             </View>
         </Background>
